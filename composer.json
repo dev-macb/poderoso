@@ -1,0 +1,31 @@
+{
+    "name": "dev-macb/poderoso",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "poderoso",
+        "PDO",
+        "PHP Data Object",
+        "Database",
+        "CRUD"
+    ],
+    "description": "O Poderoso é um pacote PHP que oferece uma abstração de banco de dados completa e fácil de usar.",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Miguel Alves Cordeiro Braz",
+            "role": "Desenvolvedor",
+            "homepage": "https://dev-macb.github.io/",
+            "email": "dev.macb@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DevMacb\\Poderoso\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    }
+}
