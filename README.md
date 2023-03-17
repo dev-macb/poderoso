@@ -4,7 +4,7 @@
 <div id="metadados" align="center">
     <img alt="Packagist Version" src="https://img.shields.io/packagist/v/dev-macb/poderoso?color=blue&logoColor=gray">
     <img alt="Packagist Downloads" src="https://img.shields.io/packagist/dm/dev-macb/poderoso?color=blue&logoColor=gray">
-    <img alt="Packagist License" src="https://img.shields.io/packagist/l/dev-macb/poderoso?color=blue&logoColor=gray">
+    <img alt="Packagist License" src="https://img.shields.io/packagist/l/dev-macb/poderoso?color=blue">
 </div>
 
 
