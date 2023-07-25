@@ -22,10 +22,10 @@
     ],
     "autoload": {
         "psr-4": {
-            "DevMacb\\Poderoso\\": "src/"
+            "MacB\\": "src/"
         }
     },
     "require": {
-        "php": ">=7.0"
+        "php": ">=8.0"
     }
 }
