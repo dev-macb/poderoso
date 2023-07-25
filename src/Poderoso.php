@@ -69,7 +69,7 @@
             $order = $order ? 'ORDER BY ' . $order : '';
             $limit = $limit ? 'LIMIT ' . $limit : '';
             $query = 'SELECT ' . $fields . ' FROM ' . $this->tabela . ' ' . $where . ' ' . $order . ' ' . $limit;
-            return $this->executar($query);
+            return $this->executar($query)->fetch(PDO::FETCH_ASSOC) ?: null;
         }
 
 

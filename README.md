@@ -44,33 +44,42 @@ $ composer install
 
 <h2 id="funcionalidades">⚙️ Funcionalidades</h2>
 <p>
-Para usar o Poderoso basta criar um arquivo <code>.env</code> na raiz de seu projeto. Como, por exemplo:
-
-```env
-BD_DRIV=mysql | pgsql
-BD_HOST=localhost
-BD_PORT=12345
-BD_NAME=nome_do_banco
-BD_USER=usuario_do_banco
-BD_PASS=senha_do_usuario
-```
 
 Configure os dados de conexao com o banco de dados no arquivo <code>config.php</code>
 ```php
 <?php
     use DevMacB\Poderoso;
 
-    // Carregar .env na raiz do projeto
-    Poderoso\BancoDados::configurar(
-        getenv('BD_DRIV'),
-        getenv('BD_HOST'),
-        getenv('BD_PORT'),
-        getenv('BD_NAME'),
-        getenv('BD_USER'),
-        getenv('BD_PASS'),
-    );
+    // Configurar as informações de conexão com o banco de dados
+    Poderoso::configurar('mysql', 'localhost', 3306, 'poderoso', 'root', '')
 ?>
 ```
+
+
+Agora, você pode trabalhar com as funcionalidades do pacote no <code>index.php</code>.
+```php
+<?php 
+    require(__DIR__.'/config.php');
+
+    use MacB\Poderoso;
+    
+    // Conectar ao banco de dados 'usuarios'
+    $conexao = new Poderoso('usuarios');
+
+    // Inserir um novo registro na tabela 'usuarios'
+    $resultado_id = $conexao->inserir(['email' => 'poderoso@email.com', 'senha' => '12tr3s']);
+    
+    // Buscar um registro na tabela 'usuarios' com o ID igual a 1
+    $resultado_buscar = $conexao->buscar('id = 1');
+
+    // Atualizar o registro na tabela 'usuarios' com o ID igual a 1
+    $resultado_atualizar = $conexao->atualizar('id = 1', ['senha' => 'n0v4s3nha']);
+    
+    // Deletar o registro na tabela 'usuarios' com o ID igual a 1
+    $resultado_deletar = $conexao->deletar('id = 1');
+?>
+```
+
 <blockquote>
     Lembre-se de adicionar no <code>.gitignore</code> as arquivos de variáveis de ambiente para não colocar dados sensíveis do seu projeto para repositórios na nuvem
 </blockquote>
